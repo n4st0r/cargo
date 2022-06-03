@@ -392,7 +392,7 @@ pub enum E {
 fn main() {
     use updated_crate::E;
     let x = E::Variant1;
-    match x { // Error: `E::Variant2` not covered
+    match x { // Error: non-exhaustive patterns: `E::Variant2` not covered
         E::Variant1 => {}
     }
 }
@@ -702,7 +702,7 @@ impl Trait for Foo {}
 
 fn main() {
     let x = Foo;
-    x.foo(1); // Error: this function takes 0 arguments
+    x.foo(1); // Error: this method takes 0 arguments but 1 argument was supplied
 }
 ```
 

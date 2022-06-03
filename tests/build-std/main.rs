@@ -111,7 +111,9 @@ fn basic() {
         // Importantly, this should not say [UPDATING]
         // There have been multiple bugs where every build triggers and update.
         .with_stderr(
-            "[COMPILING] foo v0.0.1 [..]\n\
+            "[UPDATING] git repository `https://github.com/solana-labs/compiler-builtins`\n\
+             [UPDATING] crates.io index\n\
+             [COMPILING] foo v0.0.1 [..]\n\
              [FINISHED] dev [..]",
         )
         .run();
